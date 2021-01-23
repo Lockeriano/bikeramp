@@ -1,0 +1,22 @@
+os: linux
+language: ruby
+rvm:
+  - 2.7.2
+
+cache:
+  bundler: true
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'CREATE DATABASE core_test;' -U postgres
+
+script:
+  - bundle exec rspec
+
+after_success:
+  - ./vendor/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+notifications:
+  email: false

@@ -1,0 +1,33 @@
+---
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+############################# Metrics #############################
+
+Metrics/LineLength:
+  # Default: 80
+  Max: 120
+
+Metrics/MethodLength:
+  # Default: 10
+  Max: 15
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.gemspec'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+
+
+############################# RSpec #############################

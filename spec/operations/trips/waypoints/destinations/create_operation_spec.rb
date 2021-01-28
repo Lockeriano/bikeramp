@@ -12,7 +12,7 @@ describe Trips::Waypoints::Destinations::CreateOperation do
   describe '#call' do
     context 'when operation succeed' do
       let(:create_operation) { instance_double(described_class) }
-      let(:destination) { instance_double(Trip::Destination) }
+      let(:destination) { instance_double(Trips::Destination) }
 
       let(:expected_monad) do
         Success(destination)

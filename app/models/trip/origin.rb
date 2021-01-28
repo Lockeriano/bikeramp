@@ -21,7 +21,5 @@
 #
 #  fk_rails_...  (trip_id => trips.id)
 #
-module Trip
-  class Origin < Waypoint
-  end
+class Trip::Origin < Waypoint
 end

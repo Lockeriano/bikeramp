@@ -14,6 +14,10 @@ module API
           error!({ errors: { message: e.message } }, 400)
         end
 
+        rescue_from Grape::Exceptions::InvalidMessageBody do |e|
+          error!({ errors: { message: e.message } }, 400)
+        end
+
         rescue_from ActionController::ParameterMissing do |e|
           error!({ errors: { message: e.message } }, 400)
         end

@@ -3,3 +3,5 @@ en:
     geolocation_error: Could not geolocate address
     calculate_distance_error: Could not calculate distance
     something_went_wrong: Something went wrong
+    no_trips_in_current_month: You have no trips this month
+    no_trips_in_current_week: You have no trips this week

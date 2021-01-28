@@ -1,22 +1,26 @@
+# frozen_string_literal: true
+
 require 'dry/monads'
 
 class ApplicationOperation
-  include Callee
+  extend Dry::Initializer
+
   include Dry::Monads[:result, :do]
+  include Requests::Import['response_status_contract']
 
   private
 
-  def check_errors
-    return Failure(errors: errors) if errors.any?
+  def validate_contract(contract, **args)
+    result = contract.call(args)
 
-    Success(nil)
-  end
-
-  def errors
-    @errors ||= contract.call(form_data).errors.to_h
-  end
-
-  def form_data
-    @form_data ||= form.to_h
+    if result.errors.any?
+      Failure(
+        response: { status: args[:response]&.status, body: args[:response]&.body }.compact,
+        errors: result.errors.to_h,
+        messages: result.errors.map { |message| { text: message.text } }
+      )
+    else
+      Success()
+    end
   end
 end

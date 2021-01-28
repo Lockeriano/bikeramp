@@ -1,0 +1,22 @@
+en:
+  contracts:
+    errors:
+      rules:
+        price:
+          cannot_be_less_than_0: cannot be less than 0
+        date:
+          invalid_format: invalid format
+        address:
+          invalid_format: invalid format
+        start_address:
+          invalid_format: invalid format
+          cannot_be_nil: cannot be nil
+        destination_address:
+          invalid_format: invalid format
+          cannot_be_nil: cannot be nil
+        origin:
+          invalid: is invalid
+        destination:
+          invalid: is invalid
+        response:
+          error: is failure

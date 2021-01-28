@@ -24,7 +24,7 @@ gem 'grape-swagger-rails', '~> 0.3.1'
 gem 'money-rails', '~> 1.12'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
-gem 'rack-cors', '~> 1.0.1'
+gem "rack-cors", ">= 1.0.4"
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
 group :development, :test do
